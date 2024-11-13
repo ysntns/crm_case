@@ -117,12 +117,258 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Footer
-st.markdown("""
+# # Footer
+# st.markdown("""
+#     <style>
+#     .footer {
+#         position: fixed;
+#         bottom: -2cm;  /* Footer'ı daha aşağıya kaydırmak için */
+#         left: 0;
+#         width: 100%;
+#         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+#         color: white;
+#         padding: 20px 35px;
+#         text-align: center;
+#         border-top: 1px solid #4CAF50;
+#         z-index: 999;
+#         font-size: 1em;
+#     }
+#     .footer-content {
+#         display: flex;
+#         flex-direction: column;
+#         align-items: center;
+#         gap: 15px;
+#     }
+#     .footer-top {
+#         display: flex;
+#         flex-direction: column;
+#         align-items: center;
+#         gap: 10px;
+#     }
+#     .footer-bottom {
+#         display: flex;
+#         flex-direction: row;
+#         justify-content: center;
+#         gap: 20px;
+#         flex-wrap: wrap;
+#     }
+#     .footer-title {
+#         color: #4CAF50;
+#         font-size: 1.2em;
+#     }
+#     .footer-subtitle {
+#         color: #9e9e9e;
+#         font-size: 1em;
+#     }
+#     .social-links {
+#         display: flex;
+#         justify-content: center;
+#         gap: 15px;
+#         flex-wrap: wrap;
+#     }
+#     .social-link {
+#         color: white;
+#         text-decoration: none;
+#         font-size: 1.1em;
+#         transition: color 0.3s ease;
+#     }
+#     .social-link:hover {
+#         color: #4CAF50;
+#     }
+#     .developer-info {
+#         color: #4CAF50;
+#         font-size: 0.9em;
+#     }
+#     .disclaimer {
+#         font-size: 0.75em;
+#         color: #757575;
+#     }
+
+#     /* Mobile responsiveness */
+#     @media (max-width: 768px) {
+#         .footer {
+#             padding: 15px 20px;
+#             font-size: 0.9em;
+#         }
+#         .footer-top {
+#             gap: 5px;
+#         }
+#         .footer-title {
+#             font-size: 1.1em;
+#         }
+#         .footer-subtitle {
+#             font-size: 0.9em;
+#         }
+#         .footer-bottom {
+#             flex-direction: column;
+#             gap: 10px;
+#         }
+#         .social-links {
+#             gap: 10px;
+#             justify-content: center;
+#         }
+#         .social-link {
+#             font-size: 1em;
+#         }
+#         .developer-info {
+#             font-size: 0.85em;
+#         }
+#         .disclaimer {
+#             font-size: 0.7em;
+#         }
+#     }
+#     </style>
+
+#     <div class="footer">
+#         <div class="footer-content">
+#             <div class="footer-top">
+#                 <div class="footer-title">🎮 iGaming Analytics Suite</div>
+#                 <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
+#             </div>
+#             <div class="footer-bottom">
+#                 <div class="social-links">
+#                     <a href="https://github.com/ysntns" target="_blank" class="social-link">
+#                         <i class="fab fa-github"></i> Github
+#                     </a>
+#                     <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
+#                         <i class="fab fa-linkedin"></i> Linkedin
+#                     </a>
+#                     <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
+#                         <i class="fab fa-twitter"></i> Twitter
+#                     </a>
+#                     <a href="mailto:ysn.tnss@gmail.com" class="social-link">
+#                         <i class="fas fa-envelope"></i> Mail
+#                     </a>
+#                 </div>
+#             </div>
+#             <div class="developer-info">Geliştirici: Yasin Tanış | v2.0</div>
+#             <div class="disclaimer">Bu sistem demo amaçlı geliştirilmiş olup, gerçek verileri simüle etmektedir.</div>
+#         </div>
+#     </div>
+
+#     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+# """, unsafe_allow_html=True)
+
+
+# Cache süresi
+CACHE_TTL = 3600  # 1 saat
+
+
+@st.cache_data(ttl=CACHE_TTL)
+def generate_betting_data(n_players: int = 1000) -> pd.DataFrame:
+    """Örnek bahis verisi oluşturur."""
+    try:
+        np.random.seed(42)
+        # Temel veriler
+        player_ids = range(1, n_players + 1)
+        registration_dates = [datetime.now() - timedelta(days=np.random.randint(1, 365))
+                              for _ in range(n_players)]
+
+        # Finansal veriler
+        deposits = np.random.normal(1000, 300, n_players)
+        withdrawals = deposits * np.random.uniform(0.5, 0.9, n_players)
+        bets_placed = np.random.poisson(50, n_players)
+        ggr = deposits - withdrawals
+        bonus_usage = np.random.uniform(0, 1, n_players) * 200
+
+        # Kategorik veriler
+        bet_types = np.random.choice(['Sport', 'Casino', 'Poker', 'Virtual'], n_players,
+                                     p=[0.4, 0.3, 0.2, 0.1])
+        locations = np.random.choice(['İstanbul', 'Ankara', 'İzmir', 'Antalya', 'Bursa'],
+                                     n_players)
+
+        # Risk ve aktivite verileri
+        risk_scores = np.random.beta(2, 5, n_players) * 100
+        login_frequency = np.random.poisson(8, n_players)
+        average_stake = np.random.normal(100, 30, n_players)
+
+        return pd.DataFrame({
+            'OyuncuID': player_ids,
+            'KayitTarihi': registration_dates,
+            'ToplamDepozit': deposits,
+            'ToplamCekim': withdrawals,
+            'BahisSayisi': bets_placed,
+            'GGR': ggr,
+            'BonusKullanimi': bonus_usage,
+            'OyunTipi': bet_types,
+            'Sehir': locations,
+            'RiskSkoru': risk_scores,
+            'GirisSikligi': login_frequency,
+            'OrtBahis': average_stake,
+            'SonAktivite': np.random.randint(1, 30, n_players)
+        })
+    except Exception as e:
+        st.error(f"Veri oluşturma hatası: {str(e)}")
+        return pd.DataFrame()
+
+
+@st.cache_data(ttl=CACHE_TTL)
+def prepare_filtered_data(data: pd.DataFrame,
+                          selected_games: List[str],
+                          selected_cities: List[str],
+                          min_ggr: float) -> pd.DataFrame:
+    try:
+        return data[
+            (data['OyunTipi'].isin(selected_games)) &
+            (data['Sehir'].isin(selected_cities)) &
+            (data['GGR'] >= min_ggr)
+            ]
+    except Exception as e:
+        st.error(f"Veri filtreleme hatası: {str(e)}")
+        return data
+
+
+
+# Ana veri yükleme
+with st.spinner('Veriler hazırlanıyor...'):
+    try:
+        data = generate_betting_data()
+        if data.empty:
+            st.error("Veri yüklenemedi!")
+            st.stop()
+    except Exception as e:
+        st.error(f"Veri yükleme hatası: {str(e)}")
+        st.stop()
+
+import streamlit as st
+
+def configure_sidebar(data):
+    with st.sidebar:
+        # Ana Menü
+        st.markdown("### Ana Menü")
+        analysis_type = st.selectbox(
+            "Analiz Türü Seçin",
+            options=[
+                "Genel Bakış", "Oyuncu Segmentasyonu", "GGR Analizi", "Risk Analizi",
+                "Bonus Performansı", "Oyuncu Davranışı", "Model Bazlı Tahminler",
+                "Cohort Analizi", "A/B Test Analizi", "ANOVA Analizi", "ROI Analizi",
+                "Trend Analizi"
+            ]
+        )
+
+        # Filtreleme seçenekleri
+        st.markdown("### Filtreler")
+        with st.expander("Filtreleme Seçenekleri", expanded=True):
+            selected_games = st.multiselect(
+                "Oyun Tipi", options=data['OyunTipi'].unique(), default=data['OyunTipi'].unique())
+            selected_cities = st.multiselect(
+                "Şehir", options=data['Sehir'].unique(), default=data['Sehir'].unique())
+            min_ggr = st.number_input(
+                "Minimum GGR", min_value=float(data['GGR'].min()), max_value=float(data['GGR'].max()),
+                value=float(data['GGR'].min())
+            )
+
+        # Geliştirme Detayları Butonu
+        st.markdown("<hr>", unsafe_allow_html=True)
+        if st.button('Geliştirme Detayları İçin Git'):
+            st.write("Detaylı geliştirme bilgilerine [buradan ulaşabilirsiniz](https://github.com/ysntns/crm_case/blob/main/README.md).")
+
+    # Footer'ı Sidebar'ın altında olacak şekilde yapılandırmak
+    st.markdown("""
     <style>
     .footer {
         position: fixed;
-        bottom: -2cm;  /* Footer'ı daha aşağıya kaydırmak için */
+        bottom: 0;
         left: 0;
         width: 100%;
         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
@@ -247,134 +493,8 @@ st.markdown("""
     </div>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-
-# Cache süresi
-CACHE_TTL = 3600  # 1 saat
-
-
-@st.cache_data(ttl=CACHE_TTL)
-def generate_betting_data(n_players: int = 1000) -> pd.DataFrame:
-    """Örnek bahis verisi oluşturur."""
-    try:
-        np.random.seed(42)
-        # Temel veriler
-        player_ids = range(1, n_players + 1)
-        registration_dates = [datetime.now() - timedelta(days=np.random.randint(1, 365))
-                              for _ in range(n_players)]
-
-        # Finansal veriler
-        deposits = np.random.normal(1000, 300, n_players)
-        withdrawals = deposits * np.random.uniform(0.5, 0.9, n_players)
-        bets_placed = np.random.poisson(50, n_players)
-        ggr = deposits - withdrawals
-        bonus_usage = np.random.uniform(0, 1, n_players) * 200
-
-        # Kategorik veriler
-        bet_types = np.random.choice(['Sport', 'Casino', 'Poker', 'Virtual'], n_players,
-                                     p=[0.4, 0.3, 0.2, 0.1])
-        locations = np.random.choice(['İstanbul', 'Ankara', 'İzmir', 'Antalya', 'Bursa'],
-                                     n_players)
-
-        # Risk ve aktivite verileri
-        risk_scores = np.random.beta(2, 5, n_players) * 100
-        login_frequency = np.random.poisson(8, n_players)
-        average_stake = np.random.normal(100, 30, n_players)
-
-        return pd.DataFrame({
-            'OyuncuID': player_ids,
-            'KayitTarihi': registration_dates,
-            'ToplamDepozit': deposits,
-            'ToplamCekim': withdrawals,
-            'BahisSayisi': bets_placed,
-            'GGR': ggr,
-            'BonusKullanimi': bonus_usage,
-            'OyunTipi': bet_types,
-            'Sehir': locations,
-            'RiskSkoru': risk_scores,
-            'GirisSikligi': login_frequency,
-            'OrtBahis': average_stake,
-            'SonAktivite': np.random.randint(1, 30, n_players)
-        })
-    except Exception as e:
-        st.error(f"Veri oluşturma hatası: {str(e)}")
-        return pd.DataFrame()
-
-
-@st.cache_data(ttl=CACHE_TTL)
-def prepare_filtered_data(data: pd.DataFrame,
-                          selected_games: List[str],
-                          selected_cities: List[str],
-                          min_ggr: float) -> pd.DataFrame:
-    try:
-        return data[
-            (data['OyunTipi'].isin(selected_games)) &
-            (data['Sehir'].isin(selected_cities)) &
-            (data['GGR'] >= min_ggr)
-            ]
-    except Exception as e:
-        st.error(f"Veri filtreleme hatası: {str(e)}")
-        return data
-
-
-
-# Ana veri yükleme
-with st.spinner('Veriler hazırlanıyor...'):
-    try:
-        data = generate_betting_data()
-        if data.empty:
-            st.error("Veri yüklenemedi!")
-            st.stop()
-    except Exception as e:
-        st.error(f"Veri yükleme hatası: {str(e)}")
-        st.stop()
-
-def configure_sidebar():
-    with st.sidebar:
-        st.markdown("### Ana Menü")
-
-        analysis_type = st.selectbox(
-            "Analiz Türü Seçin",
-            options=[
-                "Genel Bakış",
-                "Oyuncu Segmentasyonu",
-                "GGR Analizi",
-                "Risk Analizi",
-                "Bonus Performansı",
-                "Oyuncu Davranışı",
-                "Model Bazlı Tahminler",
-                "Cohort Analizi",
-                "A/B Test Analizi",
-                "ANOVA Analizi",
-                "ROI Analizi",
-                "Trend Analizi"
-            ]
-        )
-
-        # Filtreleme seçenekleri
-        st.markdown("### Filtreler")
-        with st.expander("Filtreleme Seçenekleri", expanded=True):
-            selected_games = st.multiselect(
-                "Oyun Tipi",
-                options=data['OyunTipi'].unique(),
-                default=data['OyunTipi'].unique()
-            )
-
-            selected_cities = st.multiselect(
-                "Şehir",
-                options=data['Sehir'].unique(),
-                default=data['Sehir'].unique()
-            )
-
-            min_ggr = st.number_input(
-                "Minimum GGR",
-                min_value=float(data['GGR'].min()),
-                max_value=float(data['GGR'].max()),
-                value=float(data['GGR'].min())
-            )
-
-        return analysis_type, selected_games, selected_cities, min_ggr
 
 
 def calculate_metrics(data: pd.DataFrame) -> Dict[str, float]:
