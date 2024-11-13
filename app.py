@@ -127,7 +127,7 @@ st.markdown("""
         width: 100%;
         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
         color: white;
-        padding: 20px 35px;
+        padding: 10px 25px;
         text-align: center;
         border-top: 1px solid #4CAF50;
         z-index: 999;
@@ -178,7 +178,7 @@ st.markdown("""
     /* Mobile responsiveness */
     @media (max-width: 768px) {
         .footer {
-            padding: 15px 20px;
+            padding: 8px 12px;
             font-size: 0.9em;  /* Optimize font size */
         }
         .footer-title {
