@@ -341,7 +341,7 @@ data = pd.DataFrame({
     'GGR': [1000, 2000, 1500]
 })
 
-def configure_sidebar(data):
+def configure_sidebar():
     with st.sidebar:
         # Ana Menü
         st.markdown("### Ana Menü")
