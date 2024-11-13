@@ -331,7 +331,17 @@ with st.spinner('Veriler hazırlanıyor...'):
         st.stop()
 
 
-def configure_sidebar():
+import pandas as pd
+import streamlit as st
+
+# Örnek data (veri seti)
+data = pd.DataFrame({
+    'OyunTipi': ['Slot', 'Rulet', 'Poker'],
+    'Sehir': ['İstanbul', 'Ankara', 'İzmir'],
+    'GGR': [1000, 2000, 1500]
+})
+
+def configure_sidebar(data):
     with st.sidebar:
         # Ana Menü
         st.markdown("### Ana Menü")
@@ -358,9 +368,8 @@ def configure_sidebar():
             )
 
         # Geliştirme Detayları Butonu
-        st.markdown("<hr>", unsafe_allow_html=True)
-        if st.button("'[Geliştirme Detayları İçin Git](https://github.com/ysntns/crm_case/blob/main/README.md).'"):
-           st.write("Hazır.")
+        if st.button('Geliştirme Detayları İçin Git'):
+            st.markdown('<a href="https://github.com/ysntns/crm_case/blob/main/README.md" target="_blank"><button style="background-color:#4CAF50;color:white;border:none;padding:10px 20px;border-radius:5px;font-size:16px;">Geliştirme Detayları İçin Git</button></a>', unsafe_allow_html=True)
 
     # Footer'ı Sidebar'ın altında olacak şekilde yapılandırmak
     st.markdown("""
@@ -493,6 +502,9 @@ def configure_sidebar():
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     """, unsafe_allow_html=True)
+
+# Fonksiyonu çağırırken data parametresini sağlıyoruz
+configure_sidebar(data)
 
 
 
