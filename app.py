@@ -180,7 +180,7 @@ st.markdown("""
                 <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
                     <i class="fab fa-linkedin"></i> Linkedin
                 </a>
-                <a href="https://twitter.com/ysntns" target="_blank" class="social-link">
+                <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
                     <i class="fab fa-twitter"></i> Twitter
                 </a>
                 <a href="mailto:ysn.tnss@gmail.com" class="social-link">
