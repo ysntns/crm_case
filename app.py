@@ -41,7 +41,14 @@ st.set_page_config(
 # Loading bildirimi
 with st.spinner("Dashboard yükleniyor... "):
     time.sleep(1)
-st.success("Dashboard hazır!")
+
+# Dashboard hazır mesajı ve bağlantı
+st.markdown("""
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 16px; color: #4CAF50;">Dashboard hazır!</span>
+        <a href="https://github.com/ysntns/crm_case" target="_blank" style="font-size: 16px; color: #4CAF50; text-decoration: none; border: 1px solid #4CAF50; padding: 5px 10px; border-radius: 5px;">GitHub'a Git</a>
+    </div>
+""", unsafe_allow_html=True)
 
 # Ana stil ve üst menü
 st.markdown("""
