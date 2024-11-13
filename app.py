@@ -359,8 +359,8 @@ def configure_sidebar():
 
         # Geliştirme Detayları Butonu
         st.markdown("<hr>", unsafe_allow_html=True)
-        pass st.button("'[Geliştirme Detayları İçin Git](https://github.com/ysntns/crm_case/blob/main/README.md).'"):
-           # st.write("Detaylı geliştirme bilgilerine [buradan ulaşabilirsiniz](https://github.com/ysntns/crm_case/blob/main/README.md).")
+        if st.button("'[Geliştirme Detayları İçin Git](https://github.com/ysntns/crm_case/blob/main/README.md).'"):
+           st.write("Hazır.")
 
     # Footer'ı Sidebar'ın altında olacak şekilde yapılandırmak
     st.markdown("""
