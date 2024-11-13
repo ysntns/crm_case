@@ -138,24 +138,33 @@ st.markdown("""
         flex-direction: column;
         align-items: center;
         gap: 15px;
+    }
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .footer-bottom {
+        display: flex;
+        flex-direction: row;
         justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
     .footer-title {
         color: #4CAF50;
         font-size: 1.2em;
-        margin-bottom: 5px;
     }
     .footer-subtitle {
         color: #9e9e9e;
         font-size: 1em;
-        margin-bottom: 10px;
     }
     .social-links {
         display: flex;
         justify-content: center;
         gap: 15px;
         flex-wrap: wrap;
-        margin-bottom: 10px;
     }
     .social-link {
         color: white;
@@ -179,15 +188,20 @@ st.markdown("""
     @media (max-width: 768px) {
         .footer {
             padding: 15px 20px;
-            font-size: 0.9em;  /* Optimize font size */
+            font-size: 0.9em;
+        }
+        .footer-top {
+            gap: 5px;
         }
         .footer-title {
-            font-size: 1em;
-            margin-bottom: 5px;
+            font-size: 1.1em;
         }
         .footer-subtitle {
             font-size: 0.9em;
-            margin-bottom: 10px;
+        }
+        .footer-bottom {
+            flex-direction: column;
+            gap: 10px;
         }
         .social-links {
             gap: 10px;
@@ -207,21 +221,25 @@ st.markdown("""
 
     <div class="footer">
         <div class="footer-content">
-            <div class="footer-title">🎮 iGaming Analytics Suite</div>
-            <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
-            <div class="social-links">
-                <a href="https://github.com/ysntns" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i> Github
-                </a>
-                <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i> Linkedin
-                </a>
-                <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
-                    <i class="fab fa-twitter"></i> Twitter
-                </a>
-                <a href="mailto:ysn.tnss@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i> Mail
-                </a>
+            <div class="footer-top">
+                <div class="footer-title">🎮 iGaming Analytics Suite</div>
+                <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://github.com/ysntns" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i> Github
+                    </a>
+                    <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i> Linkedin
+                    </a>
+                    <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="mailto:ysn.tnss@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i> Mail
+                    </a>
+                </div>
             </div>
             <div class="developer-info">Geliştirici: Yasin Tanış | v2.0</div>
             <div class="disclaimer">Bu sistem demo amaçlı geliştirilmiş olup, gerçek verileri simüle etmektedir.</div>
