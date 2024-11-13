@@ -1,10 +1,56 @@
 streamlit
 pandas
 numpy
-datetime
 plotly
-matplotlib
 scikit-learn
-xgboost
-mlxtend
+matplotlib
+seaborn
 scipy
+imbalanced-learn
+xgboost
+statsmodels
+plotly-express
+openpyxl
+imblearn
+mlxtend
+prophet
+tensorflow
+keras
+torch
+lightgbm
+catboost
+
+"""
+Temel Gereksinimler
+
+streamlit - Web arayüzü için
+pandas - Veri manipülasyonu için
+numpy - Numerik işlemler için
+plotly - İnteraktif görselleştirmeler için
+scikit-learn - Makine öğrenmesi modelleri için
+
+Analiz ve İstatistik
+
+matplotlib - Görselleştirme için
+seaborn - İstatistiksel görselleştirme için
+scipy - İstatistiksel analizler için
+statsmodels - İstatistiksel modeller için
+
+ML ve Optimizasyon
+
+imbalanced-learn - Dengesiz veri setleri için
+xgboost - Gradient boosting için
+imblearn - SMOTE ve diğer sampling metodları için
+mlxtend - ML eklentileri için
+
+Veri İşleme
+
+openpyxl - Excel dosyaları için
+plotly-express - Hızlı görselleştirme için
+
+Opsiyonel Paketler
+
+Deep Learning için tensorflow, keras, torch
+Zaman serisi analizi için prophet
+Alternatif ML modelleri için lightgbm, catboost
+"""
