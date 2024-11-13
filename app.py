@@ -127,29 +127,32 @@ st.markdown("""
         width: 100%;
         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
         color: white;
-        padding: 35px;  /* padding azaltıldı */
+        padding: 20px 35px;  /* Adjusted padding */
         text-align: center;
         border-top: 1px solid #4CAF50;
         z-index: 999;
-        font-size: 1.15em;  /* font boyutu küçültüldü */
+        font-size: 1.15em;
     }
     .footer-content {
         display: flex;
+        flex-wrap: wrap;  /* Allow items to wrap */
         justify-content: center;
         align-items: center;
         gap: 30px;
     }
     .footer-title {
         color: #4CAF50;
-        font-size: 1em;  /* font boyutu küçültüldü */
+        font-size: 1em;
     }
     .footer-subtitle {
         color: #9e9e9e;
-        font-size: 0.8em;  /* font boyutu küçültüldü */
+        font-size: 0.8em;
     }
     .social-links {
         display: flex;
         gap: 15px;
+        flex-wrap: wrap;  /* Allow social links to wrap */
+        justify-content: center;
     }
     .social-link {
         color: white;
@@ -161,11 +164,34 @@ st.markdown("""
     }
     .developer-info {
         color: #4CAF50;
-        font-size: 0.9em;  /* font boyutu küçültüldü */
+        font-size: 0.9em;
     }
     .disclaimer {
-        font-size: 0.75em;  /* font boyutu küçültüldü */
+        font-size: 0.75em;
         color: #757575;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .footer {
+            padding: 15px 20px;  /* Reduced padding for mobile */
+        }
+        .footer-title {
+            font-size: 0.9em;  /* Adjusted title font size */
+        }
+        .footer-subtitle {
+            font-size: 0.7em;  /* Adjusted subtitle font size */
+        }
+        .developer-info {
+            font-size: 0.8em;  /* Adjusted developer info font size */
+        }
+        .disclaimer {
+            font-size: 0.65em;  /* Adjusted disclaimer font size */
+        }
+        .social-links {
+            flex-direction: column;  /* Stack social links vertically */
+            gap: 10px;
+        }
     }
     </style>
 
@@ -194,6 +220,7 @@ st.markdown("""
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 """, unsafe_allow_html=True)
+
 
 # Cache süresi
 CACHE_TTL = 3600  # 1 saat
