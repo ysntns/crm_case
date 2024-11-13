@@ -122,7 +122,7 @@ st.markdown("""
     <style>
     .footer {
         position: fixed;
-        bottom: 0;
+        bottom: -2;
         left: 0;
         width: 100%;
         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
