@@ -176,7 +176,7 @@ st.markdown("""
     }
 
     /* Mobile responsiveness */
-    @media (max-width: 768px) {
+    @media (max-width: 450px) {
         .footer {
             padding: 8px 12px;
             font-size: 0.9em;  /* Optimize font size */
