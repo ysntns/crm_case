@@ -16,12 +16,34 @@ Bu platform, iGaming sektöründe müşteri davranışlarını derinlemesine ana
 
 ---
 
-## Kullanım Senaryoları 🧩
+# Kullanım Senaryoları 🧩
+- Bu platform, iGaming sektöründe veri odaklı kararlar almanıza yardımcı olmak için farklı kullanım senaryolarına hitap eder:
 
-- **Müşteri Kayıp Önleme**: Churn tahmin modülü, hangi müşterilerin platformu bırakabileceğini öngörerek, önlem alınmasını sağlar.
-- **Segmentasyon ile Hedefli Kampanyalar**: Farklı segmentlere göre kişiselleştirilmiş kampanyalar oluşturarak müşteri bağlılığını artırma.
-- **Risk Yönetimi ve Uyumluluk**: Risk analiz modülü, potansiyel riskleri öngörerek düzenleyici standartlara uyumu kolaylaştırır.
-- **Kampanya Etkinliği Ölçümü**: A/B testleri ve bonus performansı modülleri ile kampanya başarılarını analiz etme.
+## 1. Müşteri Kayıp (Churn) Önleme
+- Churn tahmini modülü ile, müşteri kaybı riski yüksek olan oyuncuları belirleyerek hedefli kampanyalarla müşterilerin platformda kalmasını sağlayabilirsiniz.
+
+## 2. Segment Bazlı Pazarlama
+- Müşterileri VIP, aktif, riskli gibi gruplara ayırarak her gruba özel stratejiler geliştirebilir ve pazarlama bütçenizi daha verimli kullanabilirsiniz.
+
+## 3. Gelir ve Bonus Analizi
+- GGR ve bonus analiz modülleri ile, hangi kampanyaların daha kârlı olduğunu görebilir ve bonus stratejinizi optimize edebilirsiniz.
+
+## 4. Risk Yönetimi
+- Risk analizi modülü ile, yüksek riskli kullanıcıları izleyerek, düzenleyici standartlara uyumu ve sorumlu oyun stratejilerini uygulayabilirsiniz.
+
+## 5. Performans ve Trend Takibi
+- Dönemsel trendler, oyuncu davranışları ve büyüme oranları ile iş geliştirme ve stratejik kararlar almanız için detaylı öngörüler sağlar.
+
+---
+
+# Örnek Veri Görselleştirme 📊
+Bu platform, çeşitli görselleştirme seçenekleriyle iGaming verilerini analiz etmenize olanak tanır:
+
+- **GGR Trendi**: Gelir akışlarının günlük, haftalık ve aylık olarak gösterimi.
+- **Segment Dağılımı:** Farklı müşteri segmentleri arasındaki gelir farklarının gösterimi.
+- **Risk Dağılımı:** Yüksek, orta ve düşük riskli kullanıcıların oranları.
+- **Bonus Etkinlik Analizi**: Bonus kullanım etkinliğinin zaman içindeki değişimi.
+
 
 ---
 
@@ -101,4 +123,20 @@ Proje ile ilgili daha fazla bilgi için aşağıdaki bağlantıları kullanabili
 ## Destek ve Katkıda Bulunma 🤝
 Bu projeye katkıda bulunmak istiyorsanız, lütfen GitHub üzerinden pull request gönderin veya [email](mailto:ysn.tnss@gmail.com) ile iletişime geçin. Sorun bildirmek veya öneride bulunmak için issues bölümünü kullanabilirsiniz.
 
-Daha fazla detay için lütfen [portfolio](https://www.bento.me/ysntns/) sayfamı ziyaret edin.
+  ---
+  
+# Sık Karşılaşılan Sorular (FAQ) ❓
+**1. Hangi tür veriler analiz edilebilir?**
+
+  - Bu platform, GGR, müşteri segmentasyonu, bonus etkinliği, risk skorları gibi CRM verilerini analiz etmek için optimize edilmiştir.
+  
+**2. Uygulama nasıl özelleştirilebilir?**
+
+  - Modüller, Python bilgisi olan kullanıcılar tarafından ihtiyaçlara göre düzenlenebilir. Kullanılan veri kaynaklarına göre giriş verileri özelleştirilebilir.
+    
+**3. Raporlar hangi formatlarda indirilebilir?****
+
+  - Excel, PDF ve CSV formatlarında raporlar oluşturulabilir.
+
+---
+**Daha fazla detay için lütfen [portfolio](https://www.bento.me/ysntns/) sayfamı ziyaret edin.**
