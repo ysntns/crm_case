@@ -127,36 +127,40 @@ st.markdown("""
         width: 100%;
         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
         color: white;
-        padding: 20px 35px;  /* Adjusted padding */
+        padding: 20px 35px;
         text-align: center;
         border-top: 1px solid #4CAF50;
         z-index: 999;
-        font-size: 1.15em;
+        font-size: 1em;
     }
     .footer-content {
         display: flex;
-        flex-wrap: wrap;  /* Allow items to wrap */
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 15px;
+        justify-content: center;
     }
     .footer-title {
         color: #4CAF50;
-        font-size: 1em;
+        font-size: 1.2em;
+        margin-bottom: 5px;
     }
     .footer-subtitle {
         color: #9e9e9e;
-        font-size: 0.8em;
+        font-size: 1em;
+        margin-bottom: 10px;
     }
     .social-links {
         display: flex;
-        gap: 15px;
-        flex-wrap: wrap;  /* Allow social links to wrap */
         justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
     }
     .social-link {
         color: white;
         text-decoration: none;
+        font-size: 1.1em;
         transition: color 0.3s ease;
     }
     .social-link:hover {
@@ -174,23 +178,29 @@ st.markdown("""
     /* Mobile responsiveness */
     @media (max-width: 768px) {
         .footer {
-            padding: 15px 20px;  /* Reduced padding for mobile */
+            padding: 15px 20px;
+            font-size: 0.9em;  /* Optimize font size */
         }
         .footer-title {
-            font-size: 0.9em;  /* Adjusted title font size */
+            font-size: 1em;
+            margin-bottom: 5px;
         }
         .footer-subtitle {
-            font-size: 0.7em;  /* Adjusted subtitle font size */
-        }
-        .developer-info {
-            font-size: 0.8em;  /* Adjusted developer info font size */
-        }
-        .disclaimer {
-            font-size: 0.65em;  /* Adjusted disclaimer font size */
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
         .social-links {
-            flex-direction: column;  /* Stack social links vertically */
             gap: 10px;
+            justify-content: center;
+        }
+        .social-link {
+            font-size: 1em;
+        }
+        .developer-info {
+            font-size: 0.85em;
+        }
+        .disclaimer {
+            font-size: 0.7em;
         }
     }
     </style>
