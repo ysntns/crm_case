@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant User as Kullanıcı
+    participant Dashboard as Dashboard
+    participant Analysis as Analiz Motoru
+    participant ML as ML Modelleri
+    
+    User->>Dashboard: Analiz Seçimi
+    Dashboard->>Analysis: Veri Hazırlama
+    Analysis->>ML: Model Çalıştırma
+    ML->>Dashboard: Tahmin & Sonuçlar
+    Dashboard->>User: Görselleştirme & Rapor
