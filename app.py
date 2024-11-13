@@ -375,12 +375,12 @@ def configure_sidebar():
                 value=float(data['GGR'].min())
             )
 
-        return analysis_type, selected_games, selected_cities, min_ggr
-
-        # Geliştirme Detayları Butonu
+        # Footer kısmı ve Geliştirme Detayları Butonu
+        st.markdown("---")  # Ayırıcı çizgi ekler
         if st.button('Geliştirme Detayları İçin Git'):
             st.markdown('<a href="https://github.com/ysntns/crm_case/blob/main/README.md" target="_blank"><button style="background-color:#4CAF50;color:white;border:none;padding:10px 20px;border-radius:5px;font-size:16px;">Geliştirme Detayları İçin Git</button></a>', unsafe_allow_html=True)
 
+        return analysis_type, selected_games, selected_cities, min_ggr
 
 def calculate_metrics(data: pd.DataFrame) -> Dict[str, float]:
     """Temel metrikleri hesaplar."""
