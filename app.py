@@ -381,12 +381,6 @@ def configure_sidebar():
         if st.button('Geliştirme Detayları İçin Git'):
             st.markdown('<a href="https://github.com/ysntns/crm_case/blob/main/README.md" target="_blank"><button style="background-color:#4CAF50;color:white;border:none;padding:10px 20px;border-radius:5px;font-size:16px;">Geliştirme Detayları İçin Git</button></a>', unsafe_allow_html=True)
 
-   
-
-# Fonksiyonu çağırırken data parametresini sağlıyoruz
-configure_sidebar(data)
-
-
 
 def calculate_metrics(data: pd.DataFrame) -> Dict[str, float]:
     """Temel metrikleri hesaplar."""
