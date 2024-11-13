@@ -331,26 +331,24 @@ with st.spinner('Veriler hazırlanıyor...'):
         st.stop()
 
 
-import pandas as pd
-import streamlit as st
-
-# Örnek data (veri seti)
-data = pd.DataFrame({
-    'OyunTipi': ['Slot', 'Rulet', 'Poker'],
-    'Sehir': ['İstanbul', 'Ankara', 'İzmir'],
-    'GGR': [1000, 2000, 1500]
-})
-
 def configure_sidebar():
     with st.sidebar:
-        # Ana Menü
         st.markdown("### Ana Menü")
+
         analysis_type = st.selectbox(
             "Analiz Türü Seçin",
             options=[
-                "Genel Bakış", "Oyuncu Segmentasyonu", "GGR Analizi", "Risk Analizi",
-                "Bonus Performansı", "Oyuncu Davranışı", "Model Bazlı Tahminler",
-                "Cohort Analizi", "A/B Test Analizi", "ANOVA Analizi", "ROI Analizi",
+                "Genel Bakış",
+                "Oyuncu Segmentasyonu",
+                "GGR Analizi",
+                "Risk Analizi",
+                "Bonus Performansı",
+                "Oyuncu Davranışı",
+                "Model Bazlı Tahminler",
+                "Cohort Analizi",
+                "A/B Test Analizi",
+                "ANOVA Analizi",
+                "ROI Analizi",
                 "Trend Analizi"
             ]
         )
@@ -359,13 +357,25 @@ def configure_sidebar():
         st.markdown("### Filtreler")
         with st.expander("Filtreleme Seçenekleri", expanded=True):
             selected_games = st.multiselect(
-                "Oyun Tipi", options=data['OyunTipi'].unique(), default=data['OyunTipi'].unique())
+                "Oyun Tipi",
+                options=data['OyunTipi'].unique(),
+                default=data['OyunTipi'].unique()
+            )
+
             selected_cities = st.multiselect(
-                "Şehir", options=data['Sehir'].unique(), default=data['Sehir'].unique())
+                "Şehir",
+                options=data['Sehir'].unique(),
+                default=data['Sehir'].unique()
+            )
+
             min_ggr = st.number_input(
-                "Minimum GGR", min_value=float(data['GGR'].min()), max_value=float(data['GGR'].max()),
+                "Minimum GGR",
+                min_value=float(data['GGR'].min()),
+                max_value=float(data['GGR'].max()),
                 value=float(data['GGR'].min())
             )
+
+        return analysis_type, selected_games, selected_cities, min_ggr
 
         # Geliştirme Detayları Butonu
         if st.button('Geliştirme Detayları İçin Git'):
