@@ -117,137 +117,137 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# # Footer
-# st.markdown("""
-#     <style>
-#     .footer {
-#         position: fixed;
-#         bottom: -2cm;  /* Footer'ı daha aşağıya kaydırmak için */
-#         left: 0;
-#         width: 100%;
-#         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
-#         color: white;
-#         padding: 20px 35px;
-#         text-align: center;
-#         border-top: 1px solid #4CAF50;
-#         z-index: 999;
-#         font-size: 1em;
-#     }
-#     .footer-content {
-#         display: flex;
-#         flex-direction: column;
-#         align-items: center;
-#         gap: 15px;
-#     }
-#     .footer-top {
-#         display: flex;
-#         flex-direction: column;
-#         align-items: center;
-#         gap: 10px;
-#     }
-#     .footer-bottom {
-#         display: flex;
-#         flex-direction: row;
-#         justify-content: center;
-#         gap: 20px;
-#         flex-wrap: wrap;
-#     }
-#     .footer-title {
-#         color: #4CAF50;
-#         font-size: 1.2em;
-#     }
-#     .footer-subtitle {
-#         color: #9e9e9e;
-#         font-size: 1em;
-#     }
-#     .social-links {
-#         display: flex;
-#         justify-content: center;
-#         gap: 15px;
-#         flex-wrap: wrap;
-#     }
-#     .social-link {
-#         color: white;
-#         text-decoration: none;
-#         font-size: 1.1em;
-#         transition: color 0.3s ease;
-#     }
-#     .social-link:hover {
-#         color: #4CAF50;
-#     }
-#     .developer-info {
-#         color: #4CAF50;
-#         font-size: 0.9em;
-#     }
-#     .disclaimer {
-#         font-size: 0.75em;
-#         color: #757575;
-#     }
+# Footer
+st.markdown("""
+    <style>
+    .footer {
+        position: fixed;
+        bottom: -2cm;  /* Footer'ı daha aşağıya kaydırmak için */
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+        color: white;
+        padding: 20px 35px;
+        text-align: center;
+        border-top: 1px solid #4CAF50;
+        z-index: 999;
+        font-size: 1em;
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .footer-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .footer-title {
+        color: #4CAF50;
+        font-size: 1.2em;
+    }
+    .footer-subtitle {
+        color: #9e9e9e;
+        font-size: 1em;
+    }
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .social-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: color 0.3s ease;
+    }
+    .social-link:hover {
+        color: #4CAF50;
+    }
+    .developer-info {
+        color: #4CAF50;
+        font-size: 0.9em;
+    }
+    .disclaimer {
+        font-size: 0.75em;
+        color: #757575;
+    }
 
-#     /* Mobile responsiveness */
-#     @media (max-width: 768px) {
-#         .footer {
-#             padding: 15px 20px;
-#             font-size: 0.9em;
-#         }
-#         .footer-top {
-#             gap: 5px;
-#         }
-#         .footer-title {
-#             font-size: 1.1em;
-#         }
-#         .footer-subtitle {
-#             font-size: 0.9em;
-#         }
-#         .footer-bottom {
-#             flex-direction: column;
-#             gap: 10px;
-#         }
-#         .social-links {
-#             gap: 10px;
-#             justify-content: center;
-#         }
-#         .social-link {
-#             font-size: 1em;
-#         }
-#         .developer-info {
-#             font-size: 0.85em;
-#         }
-#         .disclaimer {
-#             font-size: 0.7em;
-#         }
-#     }
-#     </style>
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .footer {
+            padding: 15px 20px;
+            font-size: 0.9em;
+        }
+        .footer-top {
+            gap: 5px;
+        }
+        .footer-title {
+            font-size: 1.1em;
+        }
+        .footer-subtitle {
+            font-size: 0.9em;
+        }
+        .footer-bottom {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .social-links {
+            gap: 10px;
+            justify-content: center;
+        }
+        .social-link {
+            font-size: 1em;
+        }
+        .developer-info {
+            font-size: 0.85em;
+        }
+        .disclaimer {
+            font-size: 0.7em;
+        }
+    }
+    </style>
 
-#     <div class="footer">
-#         <div class="footer-content">
-#             <div class="footer-top">
-#                 <div class="footer-title">🎮 iGaming Analytics Suite</div>
-#                 <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
-#             </div>
-#             <div class="footer-bottom">
-#                 <div class="social-links">
-#                     <a href="https://github.com/ysntns" target="_blank" class="social-link">
-#                         <i class="fab fa-github"></i> Github
-#                     </a>
-#                     <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
-#                         <i class="fab fa-linkedin"></i> Linkedin
-#                     </a>
-#                     <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
-#                         <i class="fab fa-twitter"></i> Twitter
-#                     </a>
-#                     <a href="mailto:ysn.tnss@gmail.com" class="social-link">
-#                         <i class="fas fa-envelope"></i> Mail
-#                     </a>
-#                 </div>
-#             </div>
-#             <div class="developer-info">Geliştirici: Yasin Tanış | v2.0</div>
-#             <div class="disclaimer">Bu sistem demo amaçlı geliştirilmiş olup, gerçek verileri simüle etmektedir.</div>
-#         </div>
-#     </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-title">🎮 iGaming Analytics Suite</div>
+                <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://github.com/ysntns" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i> Github
+                    </a>
+                    <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i> Linkedin
+                    </a>
+                    <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="mailto:ysn.tnss@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i> Mail
+                    </a>
+                </div>
+            </div>
+            <div class="developer-info">Geliştirici: Yasin Tanış | v2.0</div>
+            <div class="disclaimer">Bu sistem demo amaçlı geliştirilmiş olup, gerçek verileri simüle etmektedir.</div>
+        </div>
+    </div>
 
-#     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-# """, unsafe_allow_html=True)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+""", unsafe_allow_html=True)
 
 
 # Cache süresi
@@ -381,137 +381,7 @@ def configure_sidebar():
         if st.button('Geliştirme Detayları İçin Git'):
             st.markdown('<a href="https://github.com/ysntns/crm_case/blob/main/README.md" target="_blank"><button style="background-color:#4CAF50;color:white;border:none;padding:10px 20px;border-radius:5px;font-size:16px;">Geliştirme Detayları İçin Git</button></a>', unsafe_allow_html=True)
 
-    # Footer'ı Sidebar'ın altında olacak şekilde yapılandırmak
-    st.markdown("""
-    <style>
-    .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
-        color: white;
-        padding: 20px 35px;
-        text-align: center;
-        border-top: 1px solid #4CAF50;
-        z-index: 999;
-        font-size: 1em;
-    }
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    .footer-top {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    .footer-bottom {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    .footer-title {
-        color: #4CAF50;
-        font-size: 1.2em;
-    }
-    .footer-subtitle {
-        color: #9e9e9e;
-        font-size: 1em;
-    }
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-    .social-link {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1em;
-        transition: color 0.3s ease;
-    }
-    .social-link:hover {
-        color: #4CAF50;
-    }
-    .developer-info {
-        color: #4CAF50;
-        font-size: 0.9em;
-    }
-    .disclaimer {
-        font-size: 0.75em;
-        color: #757575;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-        .footer {
-            padding: 15px 20px;
-            font-size: 0.9em;
-        }
-        .footer-top {
-            gap: 5px;
-        }
-        .footer-title {
-            font-size: 1.1em;
-        }
-        .footer-subtitle {
-            font-size: 0.9em;
-        }
-        .footer-bottom {
-            flex-direction: column;
-            gap: 10px;
-        }
-        .social-links {
-            gap: 10px;
-            justify-content: center;
-        }
-        .social-link {
-            font-size: 1em;
-        }
-        .developer-info {
-            font-size: 0.85em;
-        }
-        .disclaimer {
-            font-size: 0.7em;
-        }
-    }
-    </style>
-
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-top">
-                <div class="footer-title">🎮 iGaming Analytics Suite</div>
-                <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <a href="https://github.com/ysntns" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i> Github
-                    </a>
-                    <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i> Linkedin
-                    </a>
-                    <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="mailto:ysn.tnss@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i> Mail
-                    </a>
-                </div>
-            </div>
-            <div class="developer-info">Geliştirici: Yasin Tanış | v2.0</div>
-            <div class="disclaimer">Bu sistem demo amaçlı geliştirilmiş olup, gerçek verileri simüle etmektedir.</div>
-        </div>
-    </div>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    """, unsafe_allow_html=True)
+   
 
 # Fonksiyonu çağırırken data parametresini sağlıyoruz
 configure_sidebar(data)
