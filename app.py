@@ -330,9 +330,8 @@ with st.spinner('Veriler hazırlanıyor...'):
         st.error(f"Veri yükleme hatası: {str(e)}")
         st.stop()
 
-import streamlit as st
 
-def configure_sidebar(data):
+def configure_sidebar():
     with st.sidebar:
         # Ana Menü
         st.markdown("### Ana Menü")
