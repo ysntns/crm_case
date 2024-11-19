@@ -129,54 +129,41 @@ st.markdown("""
     <style>
     .footer {
         position: fixed;
-        bottom: -2cm;  /* Footer'ı daha aşağıya kaydırmak için */
+        bottom: 0;
         left: 0;
         width: 100%;
         background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
         color: white;
-        padding: 20px 35px;
+        padding: 20px 35px;  /* Adjusted padding */
         text-align: center;
         border-top: 1px solid #4CAF50;
         z-index: 999;
-        font-size: 1em;
+        font-size: 1.15em;
     }
     .footer-content {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    .footer-top {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    .footer-bottom {
-        display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;  /* Allow items to wrap */
         justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
     }
     .footer-title {
         color: #4CAF50;
-        font-size: 1.2em;
+        font-size: 1em;
     }
     .footer-subtitle {
         color: #9e9e9e;
-        font-size: 1em;
+        font-size: 0.8em;
     }
     .social-links {
         display: flex;
-        justify-content: center;
         gap: 15px;
-        flex-wrap: wrap;
+        flex-wrap: wrap;  /* Allow social links to wrap */
+        justify-content: center;
     }
     .social-link {
         color: white;
         text-decoration: none;
-        font-size: 1.1em;
         transition: color 0.3s ease;
     }
     .social-link:hover {
@@ -194,59 +181,44 @@ st.markdown("""
     /* Mobile responsiveness */
     @media (max-width: 768px) {
         .footer {
-            padding: 15px 20px;
-            font-size: 0.9em;
-        }
-        .footer-top {
-            gap: 5px;
+            padding: 15px 20px;  /* Reduced padding for mobile */
         }
         .footer-title {
-            font-size: 1.1em;
+            font-size: 0.9em;  /* Adjusted title font size */
         }
         .footer-subtitle {
-            font-size: 0.9em;
-        }
-        .footer-bottom {
-            flex-direction: column;
-            gap: 10px;
-        }
-        .social-links {
-            gap: 10px;
-            justify-content: center;
-        }
-        .social-link {
-            font-size: 1em;
+            font-size: 0.7em;  /* Adjusted subtitle font size */
         }
         .developer-info {
-            font-size: 0.85em;
+            font-size: 0.8em;  /* Adjusted developer info font size */
         }
         .disclaimer {
-            font-size: 0.7em;
+            font-size: 0.65em;  /* Adjusted disclaimer font size */
+        }
+        .social-links {
+            flex-direction: column;  /* Stack social links vertically */
+            gap: 10px;
         }
     }
     </style>
 
     <div class="footer">
         <div class="footer-content">
-            <div class="footer-top">
-                <div class="footer-title">🎮 iGaming Analytics Suite</div>
-                <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <a href="https://github.com/ysntns" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i> Github
-                    </a>
-                    <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i> Linkedin
-                    </a>
-                    <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="mailto:ysn.tnss@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i> Mail
-                    </a>
-                </div>
+            <div class="footer-title">🎮 iGaming Analytics Suite</div>
+            <div class="footer-subtitle">Gelişmiş CRM Analiz ve Tahminleme Sistemi</div>
+            <div class="social-links">
+                <a href="https://github.com/ysntns" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i> Github
+                </a>
+                <a href="https://www.linkedin.com/in/ysntns" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i> Linkedin
+                </a>
+                <a href="https://twitter.com/ysntnss" target="_blank" class="social-link">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="mailto:ysn.tnss@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i> Mail
+                </a>
             </div>
             <div class="developer-info">Geliştirici: Yasin Tanış | v2.0</div>
             <div class="disclaimer">Bu sistem demo amaçlı geliştirilmiş olup, gerçek verileri simüle etmektedir.</div>
@@ -255,7 +227,6 @@ st.markdown("""
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 """, unsafe_allow_html=True)
-
 
 # Cache süresi
 CACHE_TTL = 3600  # 1 saat
