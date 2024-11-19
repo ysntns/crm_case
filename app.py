@@ -4,6 +4,11 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
+# Utility imports
+from utils.data_utils import DataUtils
+from utils.ml_utils import MLUtils
+from utils.decorators import handle_exceptions, cache_data
+
 # Veri işleme ve analizi için gereken kütüphaneler
 import pandas as pd
 import numpy as np
@@ -28,9 +33,16 @@ import warnings
 import logging
 import time
 
-warnings.filterwarnings('ignore')
+# Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Initialize utilities
+data_utils = DataUtils()
+ml_utils = MLUtils()
+
+# Suppress warnings
+warnings.filterwarnings('ignore')
 
 st.set_page_config(
     page_title="iGaming CRM Analytics",
