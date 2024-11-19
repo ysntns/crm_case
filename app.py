@@ -5,9 +5,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Utility imports
-from utils.data_utils import DataUtils
-from utils.ml_utils import MLUtils
-from utils.decorators import handle_exceptions, cache_data
+from data_utils import DataUtils
+from ml_utils import MLUtils
+from decorators import handle_exceptions, cache_data
 
 # Veri işleme ve analizi için gereken kütüphaneler
 import pandas as pd
